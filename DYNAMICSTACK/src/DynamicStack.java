@@ -50,7 +50,8 @@ public class DynamicStack {
 
         try{
             if(newSize > stackArray.length){
-                int[] newArray = new int[newSize];System.arraycopy(stackArray, 0, newArray, 0, stackArray.length);
+                int[] newArray = new int[newSize];
+                System.arraycopy(stackArray, 0, newArray, 0, stackArray.length);
                 stackArray = newArray;
                 mxSize = newSize;
 
