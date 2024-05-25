@@ -7,6 +7,7 @@ public class AllocatingHotelRooms {
         int[] roomNumbers = new int[customers.length];
         int[] arrivalArray = new int[customers.length];
         int[] departureArray = new int[customers.length];
+        int[] copyOfArrivalArray = new int[customers.length];
 
         // for loop to assign element
         int counter = 0;
@@ -16,12 +17,13 @@ public class AllocatingHotelRooms {
             counter++;
         }
         // allocate room by arrival time
+        System.arraycopy(arrivalArray,0, copyOfArrivalArray, 0 , arrivalArray.length);
+        roomNumbers = getAllocateRoomByArrival(copyOfArrivalArray);
 
-        roomNumbers = getAllocateRoomByArrival(arrivalArray);
+        //System.out.println(Arrays.toString(roomNumbers));
+        System.out.println();
+        int[] updatedArr = updateAllocatedRoom(roomNumbers, arrivalArray, departureArray);
 
-
-
-        System.out.println(Arrays.toString(roomNumbers));
 
         return new int[customers.length];
     }
@@ -50,8 +52,24 @@ public class AllocatingHotelRooms {
 
     // update allocated room by departure time
     public static int[] updateAllocatedRoom(int[] roomByArrival, int[] arrivalArray, int[] departureArray){
+            int[] updatedRoomByArrival = new int[roomByArrival.length];
+            System.arraycopy(roomByArrival,0, updatedRoomByArrival, 0, roomByArrival.length);
+        for (int i = 0; i < roomByArrival.length ; i++) {
+            int minIndex = i;
+            for (int j = 0; j <roomByArrival.length ; j++) {
+                if (roomByArrival[j] < roomByArrival[minIndex]) {
+                    minIndex = j;
+                }
+            }
+
+            System.out.println("Customers Arrival time: "+arrivalArray[minIndex]+", departure time is: " + departureArray[minIndex]);
+            roomByArrival[minIndex] = Integer.MAX_VALUE;
 
 
+
+        }
+
+        System.out.println(Arrays.toString(updatedRoomByArrival));
         return new int[roomByArrival.length];
     }
 
