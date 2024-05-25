@@ -1,4 +1,4 @@
-package class_activity_2b;
+package week_3.class_activity_2b;
 
 public class OverloadingEx2 {
     static int add(int a, int b){

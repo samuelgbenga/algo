@@ -1,4 +1,4 @@
-package Class_activity_1A;
+package week_3.Class_activity_1A;
 
 public class Main {
 

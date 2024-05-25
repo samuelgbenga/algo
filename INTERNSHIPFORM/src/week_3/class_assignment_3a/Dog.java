@@ -1,4 +1,4 @@
-package class_assignment_3a;
+package week_3.class_assignment_3a;
 
 public class Dog extends Animal{
 

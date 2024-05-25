@@ -1,2 +1,6 @@
-package DemoProject.enums;public enum CourseOffered {
+package DemoProject.enums;
+
+public enum CourseOffered {
+
+    PHYSICS, CHEMISTRY, BLABLABLA
 }

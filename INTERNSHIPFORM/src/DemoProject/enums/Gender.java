@@ -1,2 +1,5 @@
-package DemoProject.enums;public enum Gender {
+package DemoProject.enums;
+
+public enum Gender {
+    MALE, FEMALE
 }

@@ -1,2 +1,9 @@
-package DemoProject.Service;public interface PrincipalService {
+package DemoProject.Service;
+
+import DemoProject.model.Principal;
+
+public interface PrincipalService {
+
+    void displayPrincipalInfo(Principal principal);
+
 }

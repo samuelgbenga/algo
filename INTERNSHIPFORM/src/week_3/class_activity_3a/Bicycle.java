@@ -1,4 +1,4 @@
-package class_activity_3a;
+package week_3.class_activity_3a;
 
 public class Bicycle extends Vehicle{
     @Override

@@ -1,4 +1,4 @@
-package class_exercise_5a;
+package week_3.class_exercise_5a;
 
 public abstract class Person {
     private String name;

@@ -1,4 +1,4 @@
-package class_activity_2a;
+package week_3.class_activity_2a;
 
 public class OverloadingEx {
 

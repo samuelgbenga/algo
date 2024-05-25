@@ -1,4 +1,4 @@
-package class_exercise_5a;
+package week_3.class_exercise_5a;
 
 public class Teacher extends Person{
     public Teacher(int age, String name) {
