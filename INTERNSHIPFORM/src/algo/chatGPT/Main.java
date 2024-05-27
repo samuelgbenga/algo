@@ -1,37 +1,48 @@
 package algo.chatGPT;
 
-import java.math.BigInteger;
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode(int val) { this.val = val; }
+}
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(allNines(new BigInteger("11")));  // should return 9
-        System.out.println(allNines(new BigInteger("12")));  // should return -1
-        System.out.println(allNines(new BigInteger("17")));  // should return 76923
+        // Example usage:
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
+
+        System.out.println("Original List: ");
+        printList(head);
+
+        ListNode reversedHead = reverseList(head);
+
+        System.out.println("\nReversed List: ");
+        printList(reversedHead);
     }
 
-    public static BigInteger allNines(BigInteger x) {
-        BigInteger m = BigInteger.ONE;
-        BigInteger result;
-        int limit = 40000; // Upper limit of x
+    public static ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode current = head;
 
-        while (true) {
-            result = x.multiply(m);
-            if (isAllNines(result.toString())) {
-                return m;
-            }
-            if (m.compareTo(BigInteger.valueOf(limit * 9)) > 0) {
-                return BigInteger.valueOf(-1);  // Break out if m exceeds a certain threshold
-            }
-            m = m.add(BigInteger.ONE);
+        while (current != null) {
+            ListNode nextTemp = current.next; // Store next node
+            current.next = prev;              // Reverse the link
+            prev = current;                   // Move prev forward
+            current = nextTemp;               // Move current forward
         }
+
+        return prev; // New head of the reversed list
     }
 
-    private static boolean isAllNines(String number) {
-        for (char c : number.toCharArray()) {
-            if (c != '9') {
-                return false;
-            }
+    public static void printList(ListNode head) {
+        ListNode current = head;
+        while (current != null) {
+            System.out.print(current.val + " ");
+            current = current.next;
         }
-        return true;
     }
 }
