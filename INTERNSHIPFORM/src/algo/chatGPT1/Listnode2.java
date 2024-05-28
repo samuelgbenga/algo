@@ -4,9 +4,10 @@ class ListNode {
     int val;
     ListNode next;
     ListNode(int val) { this.val = val; }
+    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
 
- class ListNode2 {
+class ListNode2 {
     public static void main(String[] args) {
         // Example usage:
         ListNode head = new ListNode(1);
@@ -18,7 +19,7 @@ class ListNode {
         System.out.println("Original List: ");
         printList(head);
 
-        ListNode reversedHead = reverseBetween(head, 3, 4);
+        ListNode reversedHead = reverseBetween(head, 1, 2);
 
         System.out.println("\nReversed List from position 2 to 4: ");
         printList(reversedHead);
@@ -38,11 +39,10 @@ class ListNode {
             prev = prev.next;
         }
 
+        ListNode start = prev.next;
+        ListNode then = start.next;
 
-
-        ListNode start = prev;
-        ListNode then = start;
-
+        // Reverse the sublist between `left` and `right`
         for (int i = 0; i < right - left; i++) {
             start.next = then.next;
             then.next = prev.next;
@@ -61,4 +61,5 @@ class ListNode {
         }
     }
 }
+
 // this algorithms a crazy just do what you must and move on
