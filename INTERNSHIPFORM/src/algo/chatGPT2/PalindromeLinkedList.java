@@ -45,7 +45,7 @@ public class PalindromeLinkedList {
         return isPalindrome;
     }
 
-    private ListNode reverseList(ListNode head) {
+    private static ListNode reverseList(ListNode head) {
         ListNode prev = null;
         ListNode current = head;
         while (current != null) {
@@ -65,5 +65,13 @@ public class PalindromeLinkedList {
 
         ListNode head2 = new ListNode(1, new ListNode(2));
         System.out.println(solution.isPalindrome(head2)); // Output: false
+
+        ListNode restoredList = reverseList(head2);
+
+        while(restoredList != null){
+            System.out.println(restoredList.val);
+            restoredList = restoredList.next;
+        }
+
     }
 }

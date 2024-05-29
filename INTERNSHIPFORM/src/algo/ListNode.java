@@ -5,7 +5,7 @@ checks for the presence of cycle in
 a node list
  */
 
-class Solution {
+class NoCycleNode {
     public boolean hasCycle(ListNode head) {
         if (head == null || head.next == null) {
             return false; // A single node or an empty list cannot have a cycle
@@ -26,7 +26,7 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        NoCycleNode solution = new NoCycleNode();
 
         // Create a linked list with a cycle
         ListNode head = new ListNode(3);
