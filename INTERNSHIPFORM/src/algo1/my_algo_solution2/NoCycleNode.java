@@ -19,22 +19,48 @@ class ListNode {
 public class NoCycleNode {
 
     public  boolean hasCycle(ListNode head){
+//
+//        if(head == null || head.next == null) return false;
+//
+//        ListNode fast = head.next;
+//        ListNode slow = head;
+//
+//        while( fast != null && fast.next != null){
+//
+//            if(fast == slow) return true;
+//
+//            fast = fast.next.next;
+//            slow = slow.next;
+//
+//        }
+//
+//        return false;
 
+//        if(head == null || head.next == null) return false;
+//
+//        ListNode slow = head;
+//        ListNode fast = head.next;
+//
+//        while(fast != slow){
+//            if(fast == null || fast.next == null) return false;
+//            slow = slow.next;
+//            fast = fast.next.next;
+//        }
+//
+//        return true;
         if(head == null || head.next == null) return false;
 
-        ListNode fast = head.next;
         ListNode slow = head;
+        ListNode fast = head.next;
 
-        while( fast != null && fast.next != null){
+        while(fast != slow){
+            if( fast == null || fast.next == null) return false;
 
-            if(fast == slow) return true;
-
-            fast = fast.next.next;
             slow = slow.next;
-
+            fast = fast.next.next;
         }
 
-        return false;
+        return true;
     }
 
 

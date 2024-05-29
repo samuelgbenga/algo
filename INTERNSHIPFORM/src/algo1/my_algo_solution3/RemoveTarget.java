@@ -1,6 +1,7 @@
 package algo1.my_algo_solution3;
 
 
+import org.w3c.dom.NodeList;
 
 class ListNode {
     int val;
@@ -17,31 +18,62 @@ public class RemoveTarget {
 
     public ListNode removeElements(ListNode head, int target){
 
-        ListNode dummyNode = new ListNode(0);
-        dummyNode.next = head;
+//        ListNode dummyNode = new ListNode(0);
+//        dummyNode.next = head;
+//
+//        ListNode current = dummyNode;
+//
+//        while(current.next != null){
+//            if(current.next.val == target){
+//                current.next = current.next.next;
+//            }else{
+//                current = current.next;
+//            }
+//        }
 
-        ListNode current = dummyNode;
+//        if(head == null) return head;
+//
+//        ListNode dummyNode = new ListNode(0);
+//
+//        dummyNode.next = head;
+//
+//        ListNode current = dummyNode;
+//
+//        while(current.next != null){
+//            if(current.next.val == target){
+//                current.next = current.next.next;
+//            }else{
+//                current = current.next;
+//            }
+//
+//        }
+//        return dummyNode.next;
 
-        while(current.next != null){
+        if(head == null) return null;
+
+        ListNode dummyNodeList = new ListNode(0);
+        dummyNodeList = head;
+        ListNode current = dummyNodeList;
+
+
+        while( current.next != null){
+
             if(current.next.val == target){
                 current.next = current.next.next;
-            }else{
+            }else {
                 current = current.next;
             }
         }
-
-        return dummyNode.next;
+        return dummyNodeList.next;
     }
-
-
 
 
     public static void main(String[] args) {
         RemoveTarget removeTarget = new RemoveTarget();
 
         // Test case 1: head = [1,2,6,3,4,5,6], val = 6
-        ListNode head1 = new ListNode(1, new ListNode(2, new ListNode(6, new ListNode(3, new ListNode(4, new ListNode(5, new ListNode(6)))))));
-        head1 = removeTarget.removeElements(head1, 6);
+        ListNode head1 = new ListNode(1, new ListNode(1, new ListNode(6, new ListNode(3, new ListNode(4, new ListNode(5, new ListNode(6)))))));
+        head1 = removeTarget.removeElements(head1, 1);
         printList(head1); // Output: [1, 2, 3, 4, 5]
 
         // Test case 2: head = [], val = 1
