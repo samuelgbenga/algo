@@ -1,5 +1,11 @@
 package algo.chatGPT1;
 
+/*
+reversed the list node based on the left and
+right given
+ */
+
+
 class ListNode {
     int val;
     ListNode next;

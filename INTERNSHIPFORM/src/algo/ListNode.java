@@ -1,5 +1,10 @@
 package algo;
 
+/*
+checks for the presence of cycle in
+a node list
+ */
+
 class Solution {
     public boolean hasCycle(ListNode head) {
         if (head == null || head.next == null) {

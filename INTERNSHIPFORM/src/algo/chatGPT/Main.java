@@ -1,4 +1,7 @@
 package algo.chatGPT;
+/*
+Reverses the entire Node list
+ */
 
 class ListNode {
     int val;
