@@ -115,8 +115,8 @@ public class IsogramWithKTolerance {
 
     public static boolean isogramWithKTolerance(String str, int k){
 
-        str = str.replaceAll(" ", "");
-        str = str.toLowerCase();
+
+        str = str.toLowerCase().replaceAll("[^a-z]", "");
         char[] arr = str.toCharArray();
 
         // instantiate hashmap to take in the unique characters from the
