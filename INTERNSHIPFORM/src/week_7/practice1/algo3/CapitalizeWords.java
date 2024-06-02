@@ -123,50 +123,76 @@ public class CapitalizeWords {
 
         String str = " 12D 8a A xy ";
 
-        String[] strArr = str.split("\\s+");
-        String notAlphabet = str.toLowerCase().replaceAll("[a-z]", "");
+//        String[] strArr = str.split("\\s+");
+//        String notAlphabet = str.toLowerCase().replaceAll("[a-z]", "");
+//
+//
+//
+//        System.out.println(Arrays.toString(strArr));
+//        System.out.println(notAlphabet);
 
 
 
-        System.out.println(Arrays.toString(strArr));
-        System.out.println(notAlphabet);
 
+        String result = capitalizeWords(str);
 
-
-
-        //String result = capitalizeWords(str);
-
-        //System.out.println(result);
+        System.out.println(result);
 
     }
 
-    public static String capitalizeWords(String str) {
+//    public static String capitalizeWords(String str) {
+//
+//        // Do your magic here
+//       if(str.length()==0) return "";
+//
+//
+//
+//
+//        String[] strArr = str.trim().split("\\s+");
+//
+//        //for(String s: strArr) System.out.println(s+",");
+//        String notAlphabet;
+//        String cap;
+//        String subStr;
+//
+//        String result = "";
+//
+//        for(String word: strArr){
+//            notAlphabet = word.toLowerCase().replaceAll("[a-z]", "");
+//            word = word.toLowerCase().replaceAll("[^a-z]","");
+//            cap = word.substring(0,1).toUpperCase();
+//            subStr = word.substring(1,word.length());
+//            result += notAlphabet+cap+subStr+" ";
+//        }
+//
+//
+//        return result.trim();
+//    }
 
-        // Do your magic here
-       if(str.length()==0) return "";
 
 
+    public static String capitalizeWords(String s) {
+        if (s.isEmpty()) return ""; // If the string is empty, return empty string
 
+        // Split the string into words using space as delimiter
+        String[] words = s.split("\\s+");
+        StringBuilder result = new StringBuilder();
 
-        String[] strArr = str.trim().split("\\s+");
-
-        //for(String s: strArr) System.out.println(s+",");
-        String notAlphabet;
-        String cap;
-        String subStr;
-
-        String result = "";
-
-        for(String word: strArr){
-            notAlphabet = word.toLowerCase().replaceAll("[a-z]", "");
-            word = word.toLowerCase().replaceAll("[^a-z]","");
-            cap = word.substring(0,1).toUpperCase();
-            subStr = word.substring(1,word.length());
-            result += notAlphabet+cap+subStr+" ";
+        for (String word : words) {
+            // Capitalize the first character of each word
+            if (!word.isEmpty()) {
+                result.append(Character.toUpperCase(word.charAt(0)));
+                if (word.length() > 1) {
+                    // Append the remaining characters as they are
+                    result.append(word.substring(1));
+                }
+            }
+            // Append space after each word
+            result.append(" ");
         }
 
-
-        return result.trim();
+        // Remove the trailing space and return the result
+        return result.toString().replaceAll("\\s+$", "");
     }
 
 
