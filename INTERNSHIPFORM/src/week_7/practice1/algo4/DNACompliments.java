@@ -40,77 +40,97 @@ package week_7.practice1.algo4;
 
 
 // Test case
-//import org.junit.jupiter.api.DisplayName;
-//import org.junit.jupiter.api.Nested;
-//import org.junit.jupiter.api.Test;
-//import static org.junit.jupiter.api.Assertions.assertEquals;
-//
-//@DisplayName("dnaComplement")
-//public class DnaComplementTest {
-//    @Nested
-//    @DisplayName("basic tests")
-//    class BasicTests {
-//
-//        @Test
-//        @DisplayName("should work for a single A")
-//        public void shouldWorkForASingleA() {
-//            assertEquals("T", Challenge.dnaComplement("A"));
-//        }
-//
-//        @Test
-//        @DisplayName("should work for a single T")
-//        public void shouldWorkForASingleT() {
-//            assertEquals("A", Challenge.dnaComplement("T"));
-//        }
-//
-//        @Test
-//        @DisplayName("should work for a single C")
-//        public void shouldWorkForASingleC() {
-//            assertEquals("G", Challenge.dnaComplement("C"));
-//        }
-//
-//        @Test
-//        @DisplayName("should work for a single G")
-//        public void shouldWorkForASingleG() {
-//            assertEquals("C", Challenge.dnaComplement("G"));
-//        }
-//
-//        @Test
-//        @DisplayName("should work for a ATTGC")
-//        public void shouldWorkForAAttgc() {
-//            assertEquals("TAACG", Challenge.dnaComplement("ATTGC"));
-//        }
-//
-//        @Test
-//        @DisplayName("should work for a GTACAT")
-//        public void shouldWorkForAGtacat() {
-//            assertEquals("CATGTA", Challenge.dnaComplement("GTACAT"));
-//        }
-//
-//        @Test
-//        @DisplayName("should work for a CGCG")
-//        public void shouldWorkForACgcg() {
-//            assertEquals("GCGC", Challenge.dnaComplement("CGCG"));
-//        }
-//
-//        @Test
-//        @DisplayName("should work for a very long input")
-//        public void shouldWorkForAVeryLongInput() {
-//            assertEquals("CATAGCTAGCTAGCTAGCTAATATAAAAGCTGCTCTAAATTTATATATATATATGCTCTCTTATGTCTATCTGTCTAAT", Challenge.dnaComplement("GTATCGATCGATCGATCGATTATATTTTCGACGAGATTTAAATATATATATATACGAGAGAATACAGATAGACAGATTA"));
-//        }
-//    }
-//}
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+@DisplayName("dnaComplement")
+ class DnaComplementTest {
+    @Nested
+    @DisplayName("basic tests")
+    class BasicTests {
+
+        @Test
+        @DisplayName("should work for a single A")
+        public void shouldWorkForASingleA() {
+            assertEquals("T", DNACompliments.dnaComplement("A"));
+        }
+
+        @Test
+        @DisplayName("should work for a single T")
+        public void shouldWorkForASingleT() {
+            assertEquals("A", DNACompliments.dnaComplement("T"));
+        }
+
+        @Test
+        @DisplayName("should work for a single C")
+        public void shouldWorkForASingleC() {
+            assertEquals("G", DNACompliments.dnaComplement("C"));
+        }
+
+        @Test
+        @DisplayName("should work for a single G")
+        public void shouldWorkForASingleG() {
+            assertEquals("C", DNACompliments.dnaComplement("G"));
+        }
+
+        @Test
+        @DisplayName("should work for a ATTGC")
+        public void shouldWorkForAAttgc() {
+            assertEquals("TAACG", DNACompliments.dnaComplement("ATTGC"));
+        }
+
+        @Test
+        @DisplayName("should work for a GTACAT")
+        public void shouldWorkForAGtacat() {
+            assertEquals("CATGTA", DNACompliments.dnaComplement("GTACAT"));
+        }
+
+        @Test
+        @DisplayName("should work for a CGCG")
+        public void shouldWorkForACgcg() {
+            assertEquals("GCGC", DNACompliments.dnaComplement("CGCG"));
+        }
+
+        @Test
+        @DisplayName("should work for a very long input")
+        public void shouldWorkForAVeryLongInput() {
+            assertEquals("CATAGCTAGCTAGCTAGCTAATATAAAAGCTGCTCTAAATTTATATATATATATGCTCTCTTATGTCTATCTGTCTAAT", DNACompliments.dnaComplement("GTATCGATCGATCGATCGATTATATTTTCGACGAGATTTAAATATATATATATACGAGAGAATACAGATAGACAGATTA"));
+        }
+    }
+}
 
 
 public class DNACompliments {
     public static void main(String[] args) {
         // test your cases here
+        System.out.println(dnaComplement("ATTGC"));
+
 
     }
 
     public static String dnaComplement(String dna) {
 
         // do your magic here
-        return "";
+       if(dna.length() == 0) return "";
+
+
+        String pair = "";
+
+       for(int i = 0; i< dna.length(); i++){
+           String str = String.valueOf(dna.charAt(i));
+           switch(str){
+               case "A": pair += "T"; break;
+               case "T": pair += "A"; break;
+               case "C": pair += "G"; break;
+               case "G": pair += "C"; break;
+           }
+
+
+       }
+       //"ATTGC"	"TAACG"
+
+       return pair;
     }
 }

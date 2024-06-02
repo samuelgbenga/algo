@@ -76,7 +76,7 @@ public class RomanNumerals {
         }
 }
 
-// final solution that solve the problems and gets the highest;
+// final solution that solve the problems and gets the higher rating;
 
     class Solution {
         public int romanToInt(String s) {
