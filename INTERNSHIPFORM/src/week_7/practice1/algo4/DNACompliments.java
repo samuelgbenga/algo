@@ -111,10 +111,8 @@ public class DNACompliments {
     }
 
     public static String dnaComplement(String dna) {
-
         // do your magic here
        if(dna.length() == 0) return "";
-
 
         String pair = "";
 
@@ -126,10 +124,7 @@ public class DNACompliments {
                case "C": pair += "G"; break;
                case "G": pair += "C"; break;
            }
-
-
        }
-       //"ATTGC"	"TAACG"
 
        return pair;
     }
