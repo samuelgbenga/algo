@@ -1,4 +1,4 @@
-package week_7.practice1.algo1;
+package week_7.practice1.algo_section1.algo1;
 
 import java.util.HashSet;
 import java.util.Locale;

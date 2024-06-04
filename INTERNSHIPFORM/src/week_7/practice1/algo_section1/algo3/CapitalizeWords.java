@@ -1,4 +1,4 @@
-package week_7.practice1.algo3;
+package week_7.practice1.algo_section1.algo3;
 
 //Task
 //        Write a function capitalize_words(s) which capitalizes every word in the non-null (but possibly empty)

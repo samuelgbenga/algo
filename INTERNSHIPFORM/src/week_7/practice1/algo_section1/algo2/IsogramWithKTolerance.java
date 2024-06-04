@@ -1,4 +1,4 @@
-package week_7.practice1.algo2;
+package week_7.practice1.algo_section1.algo2;
 
 import java.util.ArrayList;
 import java.util.Arrays;

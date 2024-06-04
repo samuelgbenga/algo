@@ -1,4 +1,4 @@
-package week_7.practice1.algo5;
+package week_7.practice1.algo_section1.algo5;
 
 import java.util.HashMap;
 import java.util.Map;

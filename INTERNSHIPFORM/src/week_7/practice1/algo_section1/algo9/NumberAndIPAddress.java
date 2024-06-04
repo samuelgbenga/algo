@@ -1,4 +1,4 @@
-package week_7.practice1.algo9;
+package week_7.practice1.algo_section1.algo9;
 
 import java.math.BigInteger;
 import java.util.*;

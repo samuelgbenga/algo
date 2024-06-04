@@ -38,31 +38,31 @@ package week_7.practice1.algo14;
 //
 
 // Test cases
-//import org.junit.jupiter.api.DisplayName;
-//import org.junit.jupiter.api.Nested;
-//import org.junit.jupiter.api.Test;
-//import static org.junit.jupiter.api.Assertions.assertEquals;
-//
-//@DisplayName("markdownParser")
-//public class MarkdownParserTest {
-//    @Nested
-//    @DisplayName("basic tests")
-//    class BasicTests {
-//
-//        @Test
-//        @DisplayName("basic valid cases")
-//        public void basicValidCases() {
-//            assertEquals("<h1>header</h1>", Challenge.markdownParser("# header"));
-//            assertEquals("<h2>smaller header</h2>", Challenge.markdownParser("## smaller header"));
-//        }
-//
-//        @Test
-//        @DisplayName("basic invalid cases")
-//        public void basicInvalidCases() {
-//            assertEquals("#Invalid", Challenge.markdownParser("#Invalid"));
-//        }
-//    }
-//}
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+@DisplayName("markdownParser")
+ class MarkdownParserTest {
+    @Nested
+    @DisplayName("basic tests")
+    class BasicTests {
+
+        @Test
+        @DisplayName("basic valid cases")
+        public void basicValidCases() {
+            assertEquals("<h1>header</h1>", MarkdownParser.markdownParser("# header"));
+            assertEquals("<h2>smaller header</h2>", MarkdownParser.markdownParser("## smaller header"));
+        }
+
+        @Test
+        @DisplayName("basic invalid cases")
+        public void basicInvalidCases() {
+            assertEquals("#Invalid", MarkdownParser.markdownParser("#Invalid"));
+        }
+    }
+}
 
 
 
@@ -70,11 +70,36 @@ public class MarkdownParser {
     public static void main(String[] args) {
 
         // test your cases here
+       String str =  markdownParser("###### Heading with nothing in it");
+
+        System.out.println(str);
     }
 
     public static String markdownParser(String markdown) {
 
         // do your magic here
-        return "";
+        // check the markdown against regex "#+//s+.*" else return
+        if(!markdown.matches("#+\\s+.*")) return markdown;
+
+
+        // split the # tag and the content
+        int splitIndex = markdown.indexOf(' '); // get the index to split
+
+        String hashStr = markdown.substring(0, splitIndex); // get the hash tag part
+
+        String content = markdown.substring(splitIndex).trim(); // get the content part
+
+        // get the length of the hashtag or the number of hashtag
+        int len = hashStr.length();
+
+        if( len < 1 || len > 7) return content;
+
+
+
+        // get the number of hashtag
+        // peg it to the content html standard
+        // return the value
+
+        return "<h"+ len+">"+content+"</h"+len+">";
     }
 }

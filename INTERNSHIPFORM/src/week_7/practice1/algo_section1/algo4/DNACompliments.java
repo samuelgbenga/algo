@@ -1,4 +1,4 @@
-package week_7.practice1.algo4;
+package week_7.practice1.algo_section1.algo4;
 
 //Background
 //        Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells and carries the

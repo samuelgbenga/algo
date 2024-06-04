@@ -1,4 +1,4 @@
-package week_7.practice1.algo6;
+package week_7.practice1.algo_section1.algo6;
 import java.util.*;
 public class MiddleAlphabet {
 

@@ -1,4 +1,4 @@
-package week_7.practice1.algo7;
+package week_7.practice1.algo_section1.algo7;
 
 //Candidate Instructions
 //        Write a function that takes in a string and returns its longest substring
