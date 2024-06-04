@@ -17,69 +17,33 @@ package week_7.practice1.algo7;
 //
 
 //Test cases
-//import org.junit.Test;
-//import static org.junit.Assert.*;
-//
-// class ProgramTests {
-//    @Test
-//    public void TestCase1() {
-//        assertEquals("mentisac", Program.longestSubstringWithoutDuplication("clementisacap"));
-//    }
-//
-//    @Test
-//    public void TestCase2() {
-//        assertEquals("a", Program.longestSubstringWithoutDuplication("a"));
-//    }
-//
-//    @Test
-//    public void TestCase3() {
-//        assertEquals("abc", Program.longestSubstringWithoutDuplication("abc"));
-//    }
-//
-//    @Test
-//    public void TestCase4() {
-//        assertEquals("abc", Program.longestSubstringWithoutDuplication("abcb"));
-//    }
-//
-//    @Test
-//    public void TestCase5() {
-//        assertEquals("abcdef", Program.longestSubstringWithoutDuplication("abcdeabcdefc"));
-//    }
-//
-//    @Test
-//    public void TestCase6() {
-//        assertEquals("cdea", Program.longestSubstringWithoutDuplication("abccdeaabbcddef"));
-//    }
-//
-//    @Test
-//    public void TestCase7() {
-//        assertEquals("bac", Program.longestSubstringWithoutDuplication("abacacacaaabacaaaeaaafa"));
-//    }
-//
-//    @Test
-//    public void TestCase8() {
-//        assertEquals("dabcef", Program.longestSubstringWithoutDuplication("abcdabcef"));
-//    }
-//
-//    @Test
-//    public void TestCase9() {
-//        assertEquals("cbde", Program.longestSubstringWithoutDuplication("abcbde"));
-//    }
-//
-//    @Test
-//    public void TestCase10() {
-//        assertEquals("vsindecago", Program.longestSubstringWithoutDuplication("decadevsindecagonarelit"));
-//    }
-//}
 
+
+import java.util.HashMap;
 
 public class LongestSubstringWithoutDuplication {
     public static void main(String[] args) {
         // test your cases here
+        System.out.println(longestSubstringWithoutDuplication("decadevsindecagonarelit"));
     }
 
     public static String longestSubstringWithoutDuplication(String str) {
         // Do your magic here
-        return "";
+
+        HashMap<Character, Integer> mappy = new HashMap<>();
+        int[] subLength = {0,1};
+        int startingPoint = 0;
+        for (int i = 0; i<str.length(); i++){
+            char c = str.charAt(i);
+
+            if(mappy.containsKey(c)) startingPoint = Math.max(startingPoint, mappy.get(c)+1);
+
+            if(subLength[1]- subLength[0] < i+1 - startingPoint) subLength = new int[]{startingPoint, i+1};
+
+            mappy.put(c, i);
+
+        }
+
+        return str.substring(subLength[0], subLength[1]);
     }
 }
