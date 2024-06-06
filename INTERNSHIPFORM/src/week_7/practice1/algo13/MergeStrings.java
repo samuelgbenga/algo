@@ -24,8 +24,8 @@ package week_7.practice1.algo13;
 //
 //        Examples
 //        a	b	Return Value
-//        "abc"	"def"	"adbecf"
-//        "ab"	"def"	"adbef"
+//        "abc"	"def"	"adbecf" = ad be cf
+//        "ab"	"def"	"adbef"    12 34 56
 //        "abc"	"de"	"adbec"
 //
 //
@@ -63,7 +63,7 @@ public class MergeStrings {
 
     public static void main(String[] args) {
 
-        String s = mergeStrings("abc", "defghlkj");
+        String s = mergeStrings("abcdefgh", "123");
 
         System.out.println(s);
 
@@ -73,27 +73,46 @@ public class MergeStrings {
     public static String mergeStrings(String a, String b) {
 
 
+
+        // get the length of both str and b
+
         int lenA = a.length();
         int lenB = b.length();
-        int len = lenA+lenB;
+        int len = lenA+lenB; // get the sum length of both str to us as loop constrain.
         // get the difference between length of a and b
+
         // make sure to invert it if there is possibility of negative sign;
-        int lenDiff = (lenA- lenB < 0) ? lenB - lenA: lenA - lenB ;
+        int lenDiff = (lenA < lenB ) ? lenB - lenA: lenA - lenB ; //len diff is needed know when to stop alternating
 
         // gets the remaining subString of the longest string after merge completion
-        String newSub = (lenA < lenB) ? b.substring(lenA): a.substring(lenB);
+        // returns the remaining string that would not be alternating in case of len difference
+        //String newSub = (lenA < lenB) ? b.substring(lenA): a.substring(lenB);
+                                        // a = abcd, b= efghijkl
 
+        String newSub ="";
+        if(lenA < lenB){
+            newSub = b.substring(lenA);
+        }else {
+            newSub = a.substring(lenB);
+        }
+
+
+        // instantiate the final result and
+        //
         String result = "";
-        int even = 0;
-        int odd = 0;
+        int even = 0; // counter for even alternating
+        int odd = 0; // counter for odd alternating
 
-        for (int i = 0; i< len; i++){
-            if(i < len-lenDiff){
-                if((1+i)%2 != 0){
-                    result += a.charAt(odd);
-                    odd++;
+
+        // does the alternating
+        for (int i = 0; i< len; i++){ // loop through each string alternating between a and b
+            if(i < len-lenDiff){ // a = ab b= cde thelendiff = 1 sum len = 5  alterna = ac bd :e
+                if((1+i)%2 != 0){ // this if else checks for odd and even alternatively
+                    //
+                    result += a.charAt(odd); // appending the individual string  to the result.
+                    odd++; //0,1,2,3
                 }else {
-                    result +=  b.charAt(even);
+                    result +=  b.charAt(even); // append str b (character) at even loop
                     even++;
                 }
             }else {
@@ -103,6 +122,6 @@ public class MergeStrings {
         }
 
         // do your magic here
-        return result;
+        return result; // returns the final result
     }
 }

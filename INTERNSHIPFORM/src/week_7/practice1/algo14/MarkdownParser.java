@@ -93,9 +93,6 @@ public class MarkdownParser {
         int len = hashStr.length();
 
         if( len < 1 || len > 7) return content;
-
-
-
         // get the number of hashtag
         // peg it to the content html standard
         // return the value
