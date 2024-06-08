@@ -1,11 +1,11 @@
-package week_7.practice1.algo3;
-
-
-//import org.junit.Test;
+package week_7.practice1.algo4;
+import org.junit.jupiter.api.Test;
 import static org.junit.Assert.*;
+import org.junit.jupiter.api.BeforeEach;
+import java.util.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.junit.jupiter.api.Test;
+import java.util.Collections;
 
 //Given an array of buildings and a direction that all of the buildings face,
 //        return an array of the indices of the buildings that can see the sunset.
@@ -27,8 +27,8 @@ import org.junit.jupiter.api.Test;
 //        Sunset Views
 //
 //        Sample Input #1
-//        buildings = [3, 5, 4, 4, 3, 1, 3, 2]
-//        direction = "EAST" // -> Right
+//        buildings = [3, 5, 4, 4, 3, 1, 3, 2]  <--- :      [1 3 6 7]
+//        direction = "EAST" // <- Right
 //
 //        Sample Output #1
 //        [1, 3, 6, 7] // The indexes of the buildings that can see the Sun
@@ -37,17 +37,15 @@ import org.junit.jupiter.api.Test;
 //        When the direction is WEST, the returned values are different.
 //
 //        Sample Input #2
-//        buildings = [3, 5, 4, 4, 3, 1, 3, 2]
-//        direction = "WEST" // <- Left
+//        buildings = [3, 5, 4, 4, 3, 1, 3, 2] [0, 1]
+//        direction = "WEST" // -> Left
 //
 //        Sample Output #2
 //        [0, 1]
 //
 //
-
-
+//
 class ProgramTest {
-
     @Test
     public void TestCase1() {
         int[] buildings = new int[] {3, 5, 4, 4, 3, 1, 3, 2};
@@ -114,7 +112,7 @@ class ProgramTest {
         String direction = "EAST";
         ArrayList<Integer> expected = new ArrayList<Integer>();
 
-        var actual =SunsetViews.sunsetViews(buildings, direction);
+        var actual = SunsetViews.sunsetViews(buildings, direction);
         assertTrue(expected.equals(actual));
     }
 
@@ -172,45 +170,48 @@ public class SunsetViews {
     }
 
     public static ArrayList<Integer> sunsetViews(int[] buildings, String direction) {
+        // Write your code here.
 
-        ArrayList<Integer> arrList = new ArrayList<>();
-        int smallest = Integer.MIN_VALUE;
+        //
+        int minValue = Integer.MIN_VALUE;
+        ArrayList<Integer> arrayList = new ArrayList<>();
 
-        // West side which is the right side --->
-        // the sun is coming from the right side
-        // it will cast shadow to smaller buildings to the right side of
-        // a taller building.
-        if(direction=="WEST") {
-            for(int i = 0; i<buildings.length; i++){
 
-                if(smallest < buildings[i]){
-                    arrList.add(i);
-                    smallest = buildings[i];
+        if(direction == "WEST"){ //-->
+
+            for (int i = 0; i < buildings.length; i++) {
+                if(minValue<buildings[i]){ //5<6
+                    arrayList.add(i);
+                    minValue = buildings[i];
                 }
-            }
-            return arrList;
-        }
 
-        // the sun is coming from the left side
-        // East side which is the left side  <------Coming from this side
-        // so it will cast a shadow on the east side of a taller builder to buildings
-        // that are smaller
-        else if(direction =="EAST"){
-            for(int i = buildings.length-1; i>=0; i--){
-                if(smallest<buildings[i]){
-                    arrList.add(i);
-                    smallest = buildings[i];
+            }
+
+            //System.out.println(arrayList); //[0, 1]
+            return arrayList;
+        }
+        else if (direction == "EAST") {
+
+            for (int i = buildings.length-1; i >= 0; i--) { // [1,2,3,4,5,6]<-----
+                if(minValue<buildings[i]){
+                    arrayList.add(i);
+                    minValue = buildings[i];
                 }
             }
 
             ArrayList<Integer> newArrList = new ArrayList<>();
-            for(Integer a: arrList.reversed()){
+
+//            for (int i = arrayList.size()-1; i >= 0 ; i--) {
+//                newArrList.add(arrayList.get(i));
+//            }
+            for(int a : arrayList.reversed()){
                 newArrList.add(a);
             }
-          //  System.out.println(newArrList);
-           // arrList = (ArrayList<Integer>) arrList.reversed();
+
+            //System.out.println(newArrList);
+
             return newArrList;
-        }else {
+        }else{
             return null;
         }
 

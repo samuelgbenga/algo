@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
+
+
 //Create a function named divisors that takes a non-negative integer and returns
 //        an array with all of the integer's divisors (except for 1 and the number itself).
 //        If the number is prime return an empty array.
