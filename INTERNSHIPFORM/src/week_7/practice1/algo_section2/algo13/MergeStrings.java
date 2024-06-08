@@ -1,4 +1,4 @@
-package week_7.practice1.algo13;
+package week_7.practice1.algo_section2.algo13;
 
 //Task
 //        Complete the function in your editor.

@@ -1,4 +1,4 @@
-package week_7.practice1.algo16.ChatGpt;
+package week_7.practice1.algo_section2.algo16.ChatGpt;
 
 
 import java.util.HashMap;

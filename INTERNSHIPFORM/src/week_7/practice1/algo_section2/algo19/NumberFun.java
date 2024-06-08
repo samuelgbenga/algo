@@ -1,4 +1,4 @@
-package week_7.practice1.algo19;
+package week_7.practice1.algo_section2.algo19;
 
 public class NumberFun {
     public static long findNextSquare(long sq) {
@@ -10,5 +10,8 @@ public class NumberFun {
 
     public static void main(String[] args) {
         System.out.println(findNextSquare(17));
+        System.out.println(findNextSquare(25));
+        System.out.println(findNextSquare(90));
+        System.out.println(findNextSquare(81));
     }
 }

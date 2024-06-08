@@ -1,4 +1,4 @@
-package week_7.practice1.algo14;
+package week_7.practice1.algo_section2.algo14;
 
 //Background
 //        Markdown is a formatting syntax used by many documents (these instructions, for example!)

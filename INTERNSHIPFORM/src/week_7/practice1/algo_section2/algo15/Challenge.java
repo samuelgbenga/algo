@@ -1,4 +1,4 @@
-package week_7.practice1.algo15;
+package week_7.practice1.algo_section2.algo15;
 
 public class Challenge {
     public static String markdownParser(String markdown) {

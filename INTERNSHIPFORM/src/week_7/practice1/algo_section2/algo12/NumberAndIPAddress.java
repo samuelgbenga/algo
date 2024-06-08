@@ -1,4 +1,4 @@
-package week_7.practice1.algo12;
+package week_7.practice1.algo_section2.algo12;
 
 import java.math.BigInteger;
 // Radix error (number format error) that bigInteger and long cant solve

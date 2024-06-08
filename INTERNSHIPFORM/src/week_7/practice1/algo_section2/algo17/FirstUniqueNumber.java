@@ -1,4 +1,4 @@
-package week_7.practice1.algo17;
+package week_7.practice1.algo_section2.algo17;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;

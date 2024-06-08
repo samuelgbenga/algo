@@ -1,4 +1,4 @@
-package week_7.practice1.algo16.longestsubstring;
+package week_7.practice1.algo_section2.algo16.longestsubstring;
 
 import java.util.HashMap;
 import java.util.HashSet;
