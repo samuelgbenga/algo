@@ -1,5 +1,13 @@
 package week_7.practice1.algo5;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import org.junit.jupiter.api.Test;
+import static org.junit.Assert.*;
+import org.junit.jupiter.api.BeforeEach;
+import java.util.*;
+
 //Given an array of buildings and a direction that all of the buildings face,
 //        return an array of the indices of the buildings that can see the sunset.
 //
@@ -37,131 +45,126 @@ package week_7.practice1.algo5;
 //        [0, 1]
 //
 //
-//import org.junit.Test;
-//import static org.junit.Assert.*;
-//import org.junit.jupiter.api.BeforeEach;
-//import java.util.*;
-//
-//public class ProgramTest {
-//    @Test
-//    public void TestCase1() {
-//        int[] buildings = new int[] {3, 5, 4, 4, 3, 1, 3, 2};
-//        String direction = "EAST";
-//        ArrayList<Integer> expected = new ArrayList<Integer>(Arrays.asList(1, 3, 6, 7));
-//
-//        var actual = new Program().sunsetViews(buildings, direction);
-//        assertTrue(expected.equals(actual));
-//    }
-//
-//    @Test
-//    public void TestCase2() {
-//        int[] buildings = new int[] {3, 5, 4, 4, 3, 1, 3, 2};
-//        String direction = "WEST";
-//        ArrayList<Integer> expected = new ArrayList<Integer>(Arrays.asList(0, 1));
-//
-//        var actual = new Program().sunsetViews(buildings, direction);
-//        assertTrue(expected.equals(actual));
-//    }
-//
-//    @Test
-//    public void TestCase3() {
-//        int[] buildings = new int[] {10, 11};
-//        String direction = "EAST";
-//        ArrayList<Integer> expected = new ArrayList<Integer>(Arrays.asList(1));
-//
-//        var actual = new Program().sunsetViews(buildings, direction);
-//        assertTrue(expected.equals(actual));
-//    }
-//
-//    @Test
-//    public void TestCase4() {
-//        int[] buildings = new int[] {2, 4};
-//        String direction = "WEST";
-//        ArrayList<Integer> expected = new ArrayList<Integer>(Arrays.asList(0, 1));
-//
-//        var actual = new Program().sunsetViews(buildings, direction);
-//        assertTrue(expected.equals(actual));
-//    }
-//
-//    @Test
-//    public void TestCase5() {
-//        int[] buildings = new int[] {1};
-//        String direction = "EAST";
-//        ArrayList<Integer> expected = new ArrayList<Integer>(Arrays.asList(0));
-//
-//        var actual = new Program().sunsetViews(buildings, direction);
-//        assertTrue(expected.equals(actual));
-//    }
-//
-//    @Test
-//    public void TestCase6() {
-//        int[] buildings = new int[] {1};
-//        String direction = "WEST";
-//        ArrayList<Integer> expected = new ArrayList<Integer>(Arrays.asList(0));
-//
-//        var actual = new Program().sunsetViews(buildings, direction);
-//        assertTrue(expected.equals(actual));
-//    }
-//
-//    @Test
-//    public void TestCase7() {
-//        int[] buildings = new int[] {};
-//        String direction = "EAST";
-//        ArrayList<Integer> expected = new ArrayList<Integer>();
-//
-//        var actual = new Program().sunsetViews(buildings, direction);
-//        assertTrue(expected.equals(actual));
-//    }
-//
-//    @Test
-//    public void TestCase8() {
-//        int[] buildings = new int[] {};
-//        String direction = "WEST";
-//        ArrayList<Integer> expected = new ArrayList<Integer>();
-//
-//        var actual = new Program().sunsetViews(buildings, direction);
-//        assertTrue(expected.equals(actual));
-//    }
-//
-//    @Test
-//    public void TestCase9() {
-//        int[] buildings = new int[] {7, 1, 7, 8, 9, 8, 7, 6, 5, 4, 2, 5};
-//        String direction = "EAST";
-//        ArrayList<Integer> expected = new ArrayList<Integer>(Arrays.asList(4, 5, 6, 7, 11));
-//
-//        var actual = new Program().sunsetViews(buildings, direction);
-//        assertTrue(expected.equals(actual));
-//    }
-//
-//    @Test
-//    public void TestCase10() {
-//        int[] buildings = new int[] {1, 2, 3, 4, 5, 6};
-//        String direction = "EAST";
-//        ArrayList<Integer> expected = new ArrayList<Integer>(Arrays.asList(5));
-//
-//        var actual = new Program().sunsetViews(buildings, direction);
-//        assertTrue(expected.equals(actual));
-//    }
-//
-//    @Test
-//    public void TestCase11() {
-//        int[] buildings = new int[] {1, 2, 3, 4, 5, 6};
-//        String direction = "WEST";
-//        ArrayList<Integer> expected = new ArrayList<Integer>(Arrays.asList(0, 1, 2, 3, 4, 5));
-//
-//        var actual = new Program().sunsetViews(buildings, direction);
-//        assertTrue(expected.equals(actual));
-//    }
-//}
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+
+class ProgramTest {
+    @Test
+    public void TestCase1() {
+        int[] buildings = new int[] {3, 5, 4, 4, 3, 1, 3, 2};
+        String direction = "EAST";
+        ArrayList<Integer> expected = new ArrayList<Integer>(Arrays.asList(1, 3, 6, 7));
+
+        var actual = SunsetViews.sunsetViews(buildings, direction);
+        assertTrue(expected.equals(actual));
+    }
+
+    @Test
+    public void TestCase2() {
+        int[] buildings = new int[] {3, 5, 4, 4, 3, 1, 3, 2};
+        String direction = "WEST";
+        ArrayList<Integer> expected = new ArrayList<Integer>(Arrays.asList(0, 1));
+
+        var actual = SunsetViews.sunsetViews(buildings, direction);
+        assertTrue(expected.equals(actual));
+    }
+
+    @Test
+    public void TestCase3() {
+        int[] buildings = new int[] {10, 11};
+        String direction = "EAST";
+        ArrayList<Integer> expected = new ArrayList<Integer>(Arrays.asList(1));
+
+        var actual =SunsetViews.sunsetViews(buildings, direction);
+        assertTrue(expected.equals(actual));
+    }
+
+    @Test
+    public void TestCase4() {
+        int[] buildings = new int[] {2, 4};
+        String direction = "WEST";
+        ArrayList<Integer> expected = new ArrayList<Integer>(Arrays.asList(0, 1));
+
+        var actual = SunsetViews.sunsetViews(buildings, direction);
+        assertTrue(expected.equals(actual));
+    }
+
+    @Test
+    public void TestCase5() {
+        int[] buildings = new int[] {1};
+        String direction = "EAST";
+        ArrayList<Integer> expected = new ArrayList<Integer>(Arrays.asList(0));
+
+        var actual = SunsetViews.sunsetViews(buildings, direction);
+        assertTrue(expected.equals(actual));
+    }
+
+    @Test
+    public void TestCase6() {
+        int[] buildings = new int[] {1};
+        String direction = "WEST";
+        ArrayList<Integer> expected = new ArrayList<Integer>(Arrays.asList(0));
+
+        var actual = SunsetViews.sunsetViews(buildings, direction);
+        assertTrue(expected.equals(actual));
+    }
+
+    @Test
+    public void TestCase7() {
+        int[] buildings = new int[] {};
+        String direction = "EAST";
+        ArrayList<Integer> expected = new ArrayList<Integer>();
+
+        var actual = SunsetViews.sunsetViews(buildings, direction);
+        assertTrue(expected.equals(actual));
+    }
+
+    @Test
+    public void TestCase8() {
+        int[] buildings = new int[] {};
+        String direction = "WEST";
+        ArrayList<Integer> expected = new ArrayList<Integer>();
+
+        var actual = SunsetViews.sunsetViews(buildings, direction);
+        assertTrue(expected.equals(actual));
+    }
+
+    @Test
+    public void TestCase9() {
+        int[] buildings = new int[] {7, 1, 7, 8, 9, 8, 7, 6, 5, 4, 2, 5};
+        String direction = "EAST";
+        ArrayList<Integer> expected = new ArrayList<Integer>(Arrays.asList(4, 5, 6, 7, 11));
+
+        var actual = SunsetViews.sunsetViews(buildings, direction);
+        assertTrue(expected.equals(actual));
+    }
+
+    @Test
+    public void TestCase10() {
+        int[] buildings = new int[] {1, 2, 3, 4, 5, 6};
+        String direction = "EAST";
+        ArrayList<Integer> expected = new ArrayList<Integer>(Arrays.asList(5));
+
+        var actual = SunsetViews.sunsetViews(buildings, direction);
+        assertTrue(expected.equals(actual));
+    }
+
+    @Test
+    public void TestCase11() {
+        int[] buildings = new int[] {1, 2, 3, 4, 5, 6};
+        String direction = "WEST";
+        ArrayList<Integer> expected = new ArrayList<Integer>(Arrays.asList(0, 1, 2, 3, 4, 5));
+
+        var actual = SunsetViews.sunsetViews(buildings, direction);
+        assertTrue(expected.equals(actual));
+    }
+}
+
+
 
 public class SunsetViews {
     public static void main(String[] args) {
         int[] buildings = {3, 5, 4, 4, 3, 1, 3, 2};
-        String direction = "WEST"; // or "WEST"
+        String direction = "EAST"; // or "WEST"
 
         // Getting the output
         ArrayList<Integer> result = sunsetViews(buildings, direction);
@@ -170,8 +173,36 @@ public class SunsetViews {
 
     public static ArrayList<Integer> sunsetViews(int[] buildings, String direction) {
         // Write your code here.
+        ArrayList<Integer> arrList = new ArrayList<>();
+        int minInt = -1;
 
-        return null;
+        if (direction == "WEST"){
+            for(int i = 0; i< buildings.length; i++){
+                if(minInt<buildings[i]){
+                    arrList.add(i);
+                    minInt = buildings[i];
+                }
+            }
+            return arrList;
+        }else if(direction == "EAST"){
+
+            for(int i = buildings.length-1 ; i>= 0; i--){
+                if(minInt<buildings[i]){
+                    arrList.add(i);
+                    minInt = buildings[i];
+                }
+            }
+            ArrayList<Integer> newArrList = new ArrayList<>();
+
+            for(Integer a: arrList.reversed()){
+                newArrList.add(a);
+            }
+
+            return  newArrList;
+        }else{
+            return  null;
+        }
+
     }
 
 }
