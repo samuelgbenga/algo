@@ -28,7 +28,7 @@ import java.util.*;
 //        Sunset Views
 //
 //        Sample Input #1
-//        buildings = [3, 5, 4, 4, 3, 1, 3, 2]
+//        buildings = [3, 5, 4, 4, 3, 1, 3, 2]<-----
 //        direction = "EAST" // -> Right
 //
 //        Sample Output #1
@@ -192,7 +192,7 @@ public class SunsetViews {
                     minInt = buildings[i];
                 }
             }
-            ArrayList<Integer> newArrList = new ArrayList<>();
+            ArrayList<Integer> newArrList = new ArrayList<>(); //[]
 
             for(Integer a: arrList.reversed()){
                 newArrList.add(a);
