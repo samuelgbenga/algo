@@ -1,4 +1,4 @@
-package week_7.practice1.algo7;
+package week_7.practice1.algo_section3.algo7;
 import java.util.*;
 
 

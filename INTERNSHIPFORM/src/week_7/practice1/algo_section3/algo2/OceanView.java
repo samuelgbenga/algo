@@ -1,4 +1,4 @@
-package week_7.practice1.algo2;
+package week_7.practice1.algo_section3.algo2;
 
 //Description
 //        Given an array of integers heights of length n, indicating that there are n buildings,
@@ -33,7 +33,6 @@ package week_7.practice1.algo2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 
 public class OceanView {
     public static void main(String[] args) {

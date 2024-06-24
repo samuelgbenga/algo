@@ -1,12 +1,11 @@
-package week_7.practice1.algo5;
+package week_7.practice1.algo_section3.algo3;
 
+
+//import org.junit.Test;
+import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import org.junit.jupiter.api.Test;
-import static org.junit.Assert.*;
-import org.junit.jupiter.api.BeforeEach;
-import java.util.*;
 
 //Given an array of buildings and a direction that all of the buildings face,
 //        return an array of the indices of the buildings that can see the sunset.
@@ -28,7 +27,7 @@ import java.util.*;
 //        Sunset Views
 //
 //        Sample Input #1
-//        buildings = [3, 5, 4, 4, 3, 1, 3, 2]<-----
+//        buildings = [3, 5, 4, 4, 3, 1, 3, 2]
 //        direction = "EAST" // -> Right
 //
 //        Sample Output #1
@@ -48,6 +47,7 @@ import java.util.*;
 
 
 class ProgramTest {
+
     @Test
     public void TestCase1() {
         int[] buildings = new int[] {3, 5, 4, 4, 3, 1, 3, 2};
@@ -74,7 +74,7 @@ class ProgramTest {
         String direction = "EAST";
         ArrayList<Integer> expected = new ArrayList<Integer>(Arrays.asList(1));
 
-        var actual =SunsetViews.sunsetViews(buildings, direction);
+        var actual = SunsetViews.sunsetViews(buildings, direction);
         assertTrue(expected.equals(actual));
     }
 
@@ -114,7 +114,7 @@ class ProgramTest {
         String direction = "EAST";
         ArrayList<Integer> expected = new ArrayList<Integer>();
 
-        var actual = SunsetViews.sunsetViews(buildings, direction);
+        var actual =SunsetViews.sunsetViews(buildings, direction);
         assertTrue(expected.equals(actual));
     }
 
@@ -172,37 +172,47 @@ public class SunsetViews {
     }
 
     public static ArrayList<Integer> sunsetViews(int[] buildings, String direction) {
-        // Write your code here.
-        ArrayList<Integer> arrList = new ArrayList<>();
-        int minInt = -1;
 
-        if (direction == "WEST"){
-            for(int i = 0; i< buildings.length; i++){
-                if(minInt<buildings[i]){
+        ArrayList<Integer> arrList = new ArrayList<>();
+        int smallest = Integer.MIN_VALUE;
+
+        // West side which is the right side --->
+        // the sun is coming from the right side
+        // it will cast shadow to smaller buildings to the right side of
+        // a taller building.
+        if(direction=="WEST") {
+            for(int i = 0; i<buildings.length; i++){
+
+                if(smallest < buildings[i]){
                     arrList.add(i);
-                    minInt = buildings[i];
+                    smallest = buildings[i];
                 }
             }
             return arrList;
-        }else if(direction == "EAST"){
+        }
 
-            for(int i = buildings.length-1 ; i>= 0; i--){
-                if(minInt<buildings[i]){
+        // the sun is coming from the left side
+        // East side which is the left side  <------Coming from this side
+        // so it will cast a shadow on the east side of a taller builder to buildings
+        // that are smaller
+        else if(direction =="EAST"){
+            for(int i = buildings.length-1; i>=0; i--){
+                if(smallest<buildings[i]){
                     arrList.add(i);
-                    minInt = buildings[i];
+                    smallest = buildings[i];
                 }
             }
-            ArrayList<Integer> newArrList = new ArrayList<>(); //[]
 
+            ArrayList<Integer> newArrList = new ArrayList<>();
             for(Integer a: arrList.reversed()){
                 newArrList.add(a);
             }
-
-            return  newArrList;
-        }else{
-            return  null;
+          //  System.out.println(newArrList);
+           // arrList = (ArrayList<Integer>) arrList.reversed();
+            return newArrList;
+        }else {
+            return null;
         }
 
     }
-
 }

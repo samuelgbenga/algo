@@ -55,4 +55,30 @@ public class LongestSubstringWithoutDuplication {
         // Return the result
         return result;
     }
+
+    // another
+    public String ls(String str){
+
+        Map<Character, Integer> mappy = new HashMap<>();
+        int[] len = {0,1};
+        int startIndex = 0;
+
+        for(int i = 0; i<str.length(); i++){
+            char c = str.charAt(i);
+
+            if(mappy.containsKey(c)){
+
+                startIndex = Math.max(mappy.get(c)+1, startIndex);
+
+            }
+
+            if(len[1]-len[0] < i+1 - startIndex)
+
+
+            mappy.put(c, i);
+        }
+
+
+        return "";
+    }
 }

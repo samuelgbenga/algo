@@ -1,11 +1,9 @@
-package week_7.practice1.algo4;
+package week_7.practice1.algo_section3.algo4;
 import org.junit.jupiter.api.Test;
 import static org.junit.Assert.*;
-import org.junit.jupiter.api.BeforeEach;
-import java.util.*;
+
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 
 //Given an array of buildings and a direction that all of the buildings face,
 //        return an array of the indices of the buildings that can see the sunset.
