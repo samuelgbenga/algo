@@ -5,14 +5,19 @@ public class BinarySearch {
         int left = 0;
         int right = nums.length - 1;
 
+        // first loop through as long as left is greater than right
+        // left is the start/
+        // right is the end length
         while (left <= right) {
+            // implement divide and conquer
             int mid = left + (right - left) / 2;
 
+            // if found in the middle return middle
             if (nums[mid] == target) {
                 return mid;
-            } else if (nums[mid] < target) {
+            } else if (nums[mid] < target) { // if greater than middle replace left to middle + 1
                 left = mid + 1;
-            } else {
+            } else {            // if less than middle replace right with middle minus 1
                 right = mid - 1;
             }
         }
