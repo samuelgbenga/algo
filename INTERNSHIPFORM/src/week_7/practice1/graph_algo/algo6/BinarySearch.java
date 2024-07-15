@@ -1,7 +1,7 @@
 package week_7.practice1.graph_algo.algo6;
 
 public class BinarySearch {
-    public static int search(int[] nums, int target) {
+    private static int search(int[] nums, int target) {
         int left = 0;
         int right = nums.length - 1;
 
