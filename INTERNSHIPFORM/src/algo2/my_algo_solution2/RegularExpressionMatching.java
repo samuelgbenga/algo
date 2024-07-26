@@ -62,7 +62,7 @@ public class RegularExpressionMatching {
 
                     //step 6.1.2.2
                     if(p.charAt(j-2) == '.' || p.charAt(j-2) == s.charAt(i-1))
-                        isMatch[i][j] = isMatch[i][j] || isMatch[i][j];
+                        isMatch[i][j] = isMatch[i][j] || isMatch[i-1][j];
 
                 }
 
