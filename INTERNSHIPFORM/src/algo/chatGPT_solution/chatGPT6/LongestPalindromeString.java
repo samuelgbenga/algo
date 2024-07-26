@@ -1,4 +1,4 @@
-package algo.chatGPT6;
+package algo.chatGPT_solution.chatGPT6;
 
 public class LongestPalindromeString {
 

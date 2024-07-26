@@ -1,4 +1,4 @@
-package algo.chatGPT3;
+package algo.chatGPT_solution.chatGPT3;
 
 class ListNode {
     int val;

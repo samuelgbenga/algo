@@ -1,4 +1,4 @@
-package algo;
+package algo.chatGPT_solution1.chatGPT1;
 
 public class AllNines {
 

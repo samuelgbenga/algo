@@ -1,4 +1,4 @@
-package algo.chatGPT;
+package algo.chatGPT_solution.chatGPT;
 /*
 Reverses the entire Node list
  */

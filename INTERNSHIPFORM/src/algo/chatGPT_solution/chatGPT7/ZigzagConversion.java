@@ -1,4 +1,4 @@
-package algo.chatGPT7;
+package algo.chatGPT_solution.chatGPT7;
 
 public class ZigzagConversion {
     public String convert(String s, int numRows) {

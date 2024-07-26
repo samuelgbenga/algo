@@ -1,4 +1,4 @@
-package algo.chatGPT10;
+package algo.chatGPT_solution.chatGPT10;
 
 public class RegularExpressionMatching {
     public boolean isMatch(String s, String p) {
@@ -59,6 +59,7 @@ public class RegularExpressionMatching {
             }
         }
 
+        // 7 return result
         return dp[m][n];
     }
 

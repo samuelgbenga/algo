@@ -1,4 +1,4 @@
-package algo.chatGPT9;
+package algo.chatGPT_solution.chatGPT9;
 
 public class Parse32bit {
     public int myAtoi(String s) {

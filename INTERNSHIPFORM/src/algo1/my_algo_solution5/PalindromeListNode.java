@@ -1,6 +1,6 @@
 package algo1.my_algo_solution5;
 
-import algo.chatGPT2.PalindromeLinkedList;
+import algo.chatGPT_solution.chatGPT2.PalindromeLinkedList;
 
 import java.util.List;
 

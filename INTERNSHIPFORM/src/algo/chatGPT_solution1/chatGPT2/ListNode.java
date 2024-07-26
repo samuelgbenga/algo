@@ -1,4 +1,4 @@
-package algo;
+package algo.chatGPT_solution1.chatGPT2;
 
 /*
 checks for the presence of cycle in

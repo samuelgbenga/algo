@@ -1,4 +1,4 @@
-package algo.chatGPT5;
+package algo.chatGPT_solution.chatGPT5;
 
 import java.util.*;
 

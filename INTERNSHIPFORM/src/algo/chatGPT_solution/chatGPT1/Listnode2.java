@@ -1,4 +1,4 @@
-package algo.chatGPT1;
+package algo.chatGPT_solution.chatGPT1;
 
 /*
 reversed the list node based on the left and

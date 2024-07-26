@@ -1,4 +1,4 @@
-package algo.chatGPT8;
+package algo.chatGPT_solution.chatGPT8;
 
 public class IntersperseToken {
     public static String intersperse(String mainString, String token, int interval) {

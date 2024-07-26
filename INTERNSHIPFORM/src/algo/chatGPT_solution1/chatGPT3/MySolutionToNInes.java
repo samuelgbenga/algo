@@ -1,6 +1,4 @@
-package algo;
-
-import java.math.BigInteger;
+package algo.chatGPT_solution1.chatGPT3;
 
 public class MySolutionToNInes {
 
