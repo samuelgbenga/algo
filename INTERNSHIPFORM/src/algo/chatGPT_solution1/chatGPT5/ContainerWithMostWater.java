@@ -20,24 +20,43 @@ Output: 1
 
 public class ContainerWithMostWater {
     public int maxArea(int[] height) {
+
+        // 1 init left from 0
         int left = 0;
+
+        // 2 init right from length - 1
         int right = height.length - 1;
+
+        // 3 init area
         int maxArea = 0;
 
+        // 4 while left is less than right
         while (left < right) {
+
+            // 4.1 get the width by subracting the right and left
             int width = right - left;
+
+            //4.2 get current hieght
             int currentHeight = Math.min(height[left], height[right]);
+
+            // 4.3 multiply the height with the currentHeight
             int currentArea = width * currentHeight;
+
+            // 4.4 return maxArea
             maxArea = Math.max(maxArea, currentArea);
 
             // Move the pointer that points to the shorter line
+            //4.5 if item at left is less than item at right increase left
             if (height[left] < height[right]) {
                 left++;
-            } else {
+            }
+            //4.6 else increase right
+            else {
                 right--;
             }
         }
 
+        // return maxArea
         return maxArea;
     }
 

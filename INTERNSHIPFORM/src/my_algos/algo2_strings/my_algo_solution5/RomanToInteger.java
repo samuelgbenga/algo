@@ -1,12 +1,13 @@
-package algo.chatGPT_solution1.chatGPT6;
+package my_algos.algo2_strings.my_algo_solution5;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class RomanToInteger {
+
     public int romanToInt(String s) {
-        // Map to store the Roman numerals and their corresponding integer values
-        // 1 map the number to the roman equivalalent standard
+
+        // 1 init the map
         Map<Character, Integer> romanMap = new HashMap<>();
         romanMap.put('I', 1);
         romanMap.put('V', 5);
@@ -16,31 +17,34 @@ public class RomanToInteger {
         romanMap.put('D', 500);
         romanMap.put('M', 1000);
 
-        // 2 init result to zero
-        int result = 0;
 
-        // 3 init n to length of the roman numeral given
+        // 2 init the length of string
         int n = s.length();
 
-        // 4 loop through n
+        // 3 init the result
+        int result = 0;
+
+        // 4 for loop with i and len
         for (int i = 0; i < n; i++) {
 
-            // 4.1 get value at index i on the map
+
+            // 4.1 get the current number value at ith on the map
             int value = romanMap.get(s.charAt(i));
 
-            // If the current symbol is smaller than the next symbol, subtract it
-            // 4.2 if i is less than length and the value is less than char at i + 1 subtract value from result
-            if (i < n - 1 && value < romanMap.get(s.charAt(i + 1))) {
+            // 4.2 decrease result by value if i is less than lentht and value is less than value at i+1
+            if(i < n - 1 && value < romanMap.get(s.charAt(i + 1))){
                 result -= value;
             }
-            // 4.3 else add value to result
+
+            // 4.3 else increase result by value
             else {
-                // Otherwise, add it to the result
                 result += value;
             }
+
         }
 
-        //5 return result
+
+
         return result;
     }
 
@@ -59,4 +63,5 @@ public class RomanToInteger {
         String s3 = "MCMXCIV";
         System.out.println("The integer value of " + s3 + " is: " + solution.romanToInt(s3)); // Output: 1994
     }
+
 }
