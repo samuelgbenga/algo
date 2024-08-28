@@ -11,11 +11,7 @@ public class SortMultiDimensionalArray {
     private static int[] sortMultiArr(int[][] multiArr){
 
         // 1 init the resulting array with size of the multidimensional array populate it with value of zero
-       int size = 0;
-
-        for(int[] temp: multiArr){
-            for(int _: temp) size++;
-        }
+       int size = multiArr.length * multiArr[0].length;
 
         int[] resultingArr = new int[size];
 
@@ -38,7 +34,7 @@ public class SortMultiDimensionalArray {
             resultingArr[i] = indexAndMinVal[1];
 
             // 7 use that index to select the next element from that particular array at that index.
-            // 8 update the temp array with the new element replacing only the value that
+            // 8 update the temp array with the new element replacing only the value that was selected
             if(indexColumnCounter[indexAndMinVal[0]] < 2){
                 indexColumnCounter[indexAndMinVal[0]] = indexColumnCounter[indexAndMinVal[0]] + 1;
                 tempArr[indexAndMinVal[0]] = multiArr[indexAndMinVal[0]][indexColumnCounter[indexAndMinVal[0]]];
@@ -80,8 +76,8 @@ public class SortMultiDimensionalArray {
 
     public static void main(String[] args) {
 
-        int[][] multiArr1 = { {4, 6, 9}, {0, 1, 3}, {8, 11, 13}};
-        int[][] multiArr2 = { {4, 30, 34}, {81, 111, 130}, {2, 11, 31}};
+        int[][] multiArr1 = { {4, 6, 7}, {0, 1, 3}, {8, 11, 13}};
+        int[][] multiArr2 = { {4, 30, 34}, {4, 111, 130}, {21, 113, 316}};
         int[][] multiArr3 = {{10, 21, 43}, {14, 66, 109}, {80, 110, 130}};
         int[][] multiArr4 = {{0, 101, 300}, {34, 96, 99}, {80, 110, 132}};
 
