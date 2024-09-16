@@ -36,51 +36,67 @@ Explanation: The only possible triplet sums up to 0.
 
 public class ThreeSum {
     public List<List<Integer>> threeSum(int[] nums) {
+
+        // step 1 init a muli list result
         List<List<Integer>> result = new ArrayList<>();
 
-        // Step 1: Sort the array
+        // Step 2: Sort the given array
         Arrays.sort(nums);
 
-        // Step 2: Iterate through the array
+        // Step 3: Iterate through the array
         for (int i = 0; i < nums.length - 2; i++) {
-            // Skip duplicate elements
+            // step 3.1: Skip duplicate elements
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
 
-            // Step 3: Two-pointer approach
+            // Step 4: init left
             int left = i + 1;
+
+            // step 5: init right
             int right = nums.length - 1;
+
+            // step 6 init value at index negative
             int target = -nums[i];
 
+            // step 7: loop while left is less than right
             while (left < right) {
+                // step 7.1 sum value at right and left
                 int sum = nums[left] + nums[right];
 
+                // step 7.2 : check if sum is equal target
                 if (sum == target) {
-                    // Found a triplet
+                    // step 7.2.1 add to result  num at i, left, and right
                     result.add(Arrays.asList(nums[i], nums[left], nums[right]));
 
-                    // Skip duplicates for the left pointer
+                    // step 7.2.2 Skip duplicates for the left pointer
                     while (left < right && nums[left] == nums[left + 1]) {
                         left++;
                     }
 
-                    // Skip duplicates for the right pointer
+                    // step 7.2.3 Skip duplicates for the right pointer
                     while (left < right && nums[right] == nums[right - 1]) {
                         right--;
                     }
 
-                    // Move both pointers
+                    //step 7.2.4  Move left pointer up
                     left++;
+
+                    // step 7.2.5 move right pointer down
                     right--;
-                } else if (sum < target) {
+                }
+                // step 7.3 if sum is less than just move left pointer up
+                else if (sum < target) {
                     left++; // We need a larger sum, move the left pointer to the right
-                } else {
+                }
+                // step 7.9 if sum is greater than target move right pointer
+                else {
                     right--; // We need a smaller sum, move the right pointer to the left
                 }
             }
         }
 
+        // return result
         return result;
     }
 
