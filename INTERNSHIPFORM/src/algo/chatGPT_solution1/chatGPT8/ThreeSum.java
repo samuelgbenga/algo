@@ -39,64 +39,56 @@ public class ThreeSum {
 
         // step 1 init a muli list result
         List<List<Integer>> result = new ArrayList<>();
-
         // Step 2: Sort the given array
         Arrays.sort(nums);
-
         // Step 3: Iterate through the array
         for (int i = 0; i < nums.length - 2; i++) {
             // step 3.1: Skip duplicate elements
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
-
-            // Step 4: init left
+            // Step 3.2: init left
             int left = i + 1;
-
-            // step 5: init right
+            // step 3.3: init right
             int right = nums.length - 1;
-
-            // step 6 init value at index negative
+            // step 3.4 init value at index negative
             int target = -nums[i];
-
-            // step 7: loop while left is less than right
+            // step 3.5: loop while left is less than right
             while (left < right) {
-                // step 7.1 sum value at right and left
+                // step 3.5.1 sum value at right and left
                 int sum = nums[left] + nums[right];
-
-                // step 7.2 : check if sum is equal target
+                // step 3.5.2 : check if sum is equal target
                 if (sum == target) {
-                    // step 7.2.1 add to result  num at i, left, and right
+                    // step 3.5.2.1 add to result  num at i, left, and right
                     result.add(Arrays.asList(nums[i], nums[left], nums[right]));
 
-                    // step 7.2.2 Skip duplicates for the left pointer
+                    // step 3.5.2.2 Skip duplicates for the left pointer
                     while (left < right && nums[left] == nums[left + 1]) {
                         left++;
                     }
 
-                    // step 7.2.3 Skip duplicates for the right pointer
+                    // step 3.5.2.3 Skip duplicates for the right pointer
                     while (left < right && nums[right] == nums[right - 1]) {
                         right--;
                     }
 
-                    //step 7.2.4  Move left pointer up
+                    //step 3.5.2.4  Move left pointer up
                     left++;
 
-                    // step 7.2.5 move right pointer down
+                    // step 3.5.2.5 move right pointer down
                     right--;
                 }
-                // step 7.3 if sum is less than just move left pointer up
+                // step 3.5.3 if sum is less than just move left pointer up
                 else if (sum < target) {
                     left++; // We need a larger sum, move the left pointer to the right
                 }
-                // step 7.9 if sum is greater than target move right pointer
+                // step 3.5.4 if sum is greater than target move right pointer
                 else {
                     right--; // We need a smaller sum, move the right pointer to the left
                 }
             }
         }
-
-        // return result
+        // step 4 return result
         return result;
     }
 
