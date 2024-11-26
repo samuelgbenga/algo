@@ -2,15 +2,8 @@ package my_algos.algo1.my_algo_solution10;
 
 public class IntersperseToken {
 
-
-
-
-
     // solution to the intersperse algorithm that was given to me
     // recket dev
-
-
-
     public static void main(String[] args) {
         String mainString = "H-e-l-l-o";
         String token = "sucorthabitha";
