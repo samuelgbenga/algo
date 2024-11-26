@@ -112,3 +112,10 @@ public class ReversePolishNotation {
     }
 
 }
+
+/* study this solution later
+
+
+ */
+
+
