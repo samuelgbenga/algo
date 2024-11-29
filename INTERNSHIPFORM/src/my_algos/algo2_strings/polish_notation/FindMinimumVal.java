@@ -41,7 +41,7 @@ public class FindMinimumVal {
 
 
 
-        return new ArrayList<>(uniqueElements).get(0);
+        return uniqueElements.iterator().next();
     }
 
 
