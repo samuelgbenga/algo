@@ -41,7 +41,7 @@ public class FindMinimumVal {
 
 
 
-        return uniqueElements.iterator().next();
+        return uniqueElements.iterator().hasNext()  ? uniqueElements.iterator().next(): -1;
     }
 
 
@@ -49,8 +49,10 @@ public class FindMinimumVal {
         System.out.println("hello world");
 
 
-        int[] newArr = new int[]{1,1,1,2,2,3,4,4,4,5,5,6,6};
+        int[] newArr = new int[]{1,1,1,2,2,3,3,4,4,4,5,5,6,6};
 
-        System.out.println(findUniqueVal(newArr));
+        int result = findUniqueVal(newArr);
+
+        System.out.println(result == -1 ? "No unique element can be found": result  );
     }
 }
