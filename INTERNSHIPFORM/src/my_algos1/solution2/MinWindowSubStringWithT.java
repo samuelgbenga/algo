@@ -32,25 +32,42 @@ public class MinWindowSubStringWithT {
      *         int count = t.length();
      *         int start = 0, end = 0, minLen = Integer.MAX_VALUE, startIndex = 0;
      *         /// UPVOTE !
+     *
+     *         // locate by character increase the presence of that character by one.
      *         for (char c : t.toCharArray()) {
      *             map[c]++;
      *         }
      *
+     *          // converts the actual s to array of characters
      *         char[] chS = s.toCharArray();
      *
+     *          // loop while end is less than length of the char array
      *         while (end < chS.length) {
+     *              // map[chS[end++]] use current end value then increase = end++
+     *              //                  get the char at that end value in chS array = chS[end] = e.g 'a'
+     *              //                  locate the character in 'a' in map and decrease by one = map['a']
+     *              //                  so the value there would be an integer -1;
+     *              // finally if that current value before decrease is greater than 0 reduce count.
      *             if (map[chS[end++]]-- > 0) {
      *                 count--;
      *             }
+     *
+     *             // loop while count is equal zero
      *             while (count == 0) {
+     *             // this is to adjust to the current minimume
      *                 if (end - start < minLen) {
      *                     startIndex = start;
      *                     minLen = end - start;
      *                 }
+     *                 // same thing goes for this only this time it is an increament and the condition
+     *                 // is to increase count if the current number of occurence of that character is equal 0
+     *                 // and it uses start index
      *                 if (map[chS[start++]]++ == 0) {
      *                     count++;
      *                 }
      *             }
+     *
+     *
      *         }
      *
      *         return minLen == Integer.MAX_VALUE ? new String() :
