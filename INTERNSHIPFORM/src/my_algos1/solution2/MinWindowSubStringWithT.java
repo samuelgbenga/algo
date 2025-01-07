@@ -54,7 +54,7 @@ public class MinWindowSubStringWithT {
      *
      *             // loop while count is equal zero
      *             while (count == 0) {
-     *             // this is to adjust to the current minimume
+     *             // this is to adjust to the current minimum
      *                 if (end - start < minLen) {
      *                     startIndex = start;
      *                     minLen = end - start;
