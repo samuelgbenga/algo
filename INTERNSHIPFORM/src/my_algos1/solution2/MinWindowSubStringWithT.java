@@ -75,4 +75,57 @@ public class MinWindowSubStringWithT {
      *     }
      * }
      */
+
+    private static String minWindow(String s, String t){
+
+        if (s == null || t == null || s.length() == 0 || t.length() == 0 ||
+                     s.length() < t.length()) {
+                 return new String();
+             }
+
+        // initialization
+        int[] map = new int[128];
+              int count = t.length();
+              int start = 0, end = 0, minLen = Integer.MAX_VALUE, startIndex = 0;
+
+              // populate map with t but numbers though
+              for (char c : t.toCharArray()) {
+                 map[c]++;
+             }
+
+              char[] chArr = s.toCharArray();
+
+              while(end < chArr.length){
+
+                  // if the character is present reduce count
+                  // note: the length of count is the number of char in t
+                  if(map[chArr[end++]]-- > 0){
+                      count--;
+                  }
+                  // if we count finish
+                  while (count == 0){
+                      // do the switching
+                      if(end - start < minLen){
+                          minLen = end - start;
+                          startIndex = start;
+                      }
+                      // if that character is present and emptied
+                      if(map[chArr[start++]]++ == 0){
+                          count++;
+                      }
+                  }
+
+              }
+
+              return minLen == Integer.MAX_VALUE ? new String() :
+                  new String(chArr, startIndex, minLen);
+    }
+
+    public static void main(String[] args) {
+
+        String s = "samuel";
+        String t = "szx";
+        System.out.println(minWindow(s,t));;
+
+    }
 }
